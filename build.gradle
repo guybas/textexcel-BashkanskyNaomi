@@ -6,6 +6,12 @@ plugins {
     id 'eclipse'
 }
 
+jar {
+  manifest {
+    attributes 'Main-Class': 'textexcel.TextExcel'  
+  }
+}
+
 repositories {
     jcenter()
 }
@@ -14,7 +20,7 @@ dependencies {
   // Pulling from the remote repo is impossible with
   // how school network works so we include them here. 
   // testImplementation 'junit:junit:4.12'
-  testImplementation files('lib/junit-4.12.jar')
+  testImplementation files('lib/junit-4.12.jar', 'lib/hamcrest-all-1.3.jar')
 }
 
 mainClassName = 'textexcel.TextExcel'
