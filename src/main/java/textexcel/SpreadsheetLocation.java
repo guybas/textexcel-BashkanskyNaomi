@@ -1,17 +1,18 @@
 package textexcel;
-
+/*A class that fully implements the Location interface, 
+ *and contains a constructor taking a single String parameter (e.g., "D20").
+ */
 public class SpreadsheetLocation implements Location {
-  public SpreadsheetLocation(String cellName) {
+	private String cellName;
+	public SpreadsheetLocation(String cellName) {
+		this.cellName = cellName;
+	}
 
-  }
+	public int getCol() {
+		return "ABCDEFGHIJKL".indexOf(cellName.charAt(0));
+	}
 
-  @Override
-  public int getRow() {
-    return 0;
-  }
-
-  @Override 
-  public int getCol() {
-    return 0;
-  }
+	public int getRow() {
+		return Integer.parseInt(cellName.substring(1))-1;
+	}
 }
